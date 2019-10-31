@@ -1,7 +1,9 @@
+<% provide(:title, 'ホーム') %>
 <div class="center jumbotron jumbotron-extend">
   <div class="container-fluid jumbotron-container">
     <h1>REVIEWEEES</h1>
     <p class="site-description">お気に入りの日用品をシェア&レビューしよう！</p>
-    <%= link_to "投稿する", signup_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "投稿する", signup_path, class: "btn btn-lg btn-primary-home" %>
   </div>
 </div>
+<%= render 'layouts/about' %>

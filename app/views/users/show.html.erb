@@ -1,0 +1,30 @@
+<% provide(:title, 'プロフィール') %>
+<div class="container text-center">
+  <div class="jumbotron">
+    <h3><%= @user.name %></h3>
+    <h5>ユーザー画像挿入位置</h5>
+  </div>
+  <div class="tabs jumbotron">
+    <input id="all" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="all"><i class="far fa-clipboard"></i></label>
+    <input id="programming" type="radio" name="tab_item">
+    <label class="tab_item" for="programming"><i class="far fa-comments"></i></label>
+    <input id="design" type="radio" name="tab_item">
+    <label class="tab_item" for="design"><i class="far fa-heart"></i></label>
+  <div class="tab_content" id="all_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">投稿</p>
+    </div>
+  </div>
+  <div class="tab_content" id="programming_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">レビュー</p>
+    </div>
+  </div>
+  <div class="tab_content" id="design_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">いいね</p>
+    </div>
+  </div>
+  </div>
+</div>
