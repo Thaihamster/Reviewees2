@@ -6,7 +6,6 @@
 body {
   background-color: #F7F6EB;
   font-family: YuGothic,'Yu Gothic',sans-serif;
-  padding-top: 50px;
 }
 
 section {
@@ -53,11 +52,13 @@ p {
 }
 
 /* header */
-header {
-  background-color: white
+.navbar {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
 }
 
-header {
+.navbar-nav {
   li {
     padding-top: 12px;
     padding-right: 20px;
@@ -74,21 +75,49 @@ header {
   }
 }
 
-.navbar-expand-sm {
-  margin: 0px;
-  padding: 0px;
-}
-
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: black;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 11px;
+  padding-top: 15px;
   font-weight: bold;
   text-decoration: none;
+}
+
+.btn-dropdown {
+  margin-top: 6px;
+  margin-left: 5px;
+  font-weight: bold;
+  border-color: #2B7396;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.btn-dropdown:hover {
+  color: white;
+  background-color: #2B7396;
+  transition-duration: 0.4s;
+}
+
+.dropdown-menu {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 20px;
+  a {
+    margin: 0;
+    padding: 0;
+    display: list-item;
+    text-align: center;
+    line-height: 40px;
+  }
+  a:hover {
+    color: white;
+    background-color: #2B7396;
+    transition-duration: 0.4s;
+    border-radius: 30px;
+  }
 }
 
 /* Home */
@@ -114,6 +143,7 @@ header {
 .btn-primary-home {
   background-color: #2B7396;
   color: white;
+  font-weight: bold;
   transition-duration: 0.4s
 }
 
@@ -124,6 +154,7 @@ header {
 }
 
 /* about */
+
 .col-sm-4 {
   padding-top: 20px;
   background-color: #F6FBF6;
@@ -160,7 +191,7 @@ footer {
   }
 }
 
-/* forms */
+/* form/signup */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -212,6 +243,7 @@ input {
 }
 
 /* users/show */
+
 .jumbotron {
   position: relative;
   background-color: transparent;
@@ -269,11 +301,43 @@ input[name="tab_item"] {
 }
 
 /* Flash message */
+
 .alert-success {
-  width: 100%;
+  width: auto;
   height: auto;
   text-align: center;
   font-weight: bold;
   color: white;
   background-color: #BBD347;
+}
+
+.alert-danger {
+  height: auto;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #B34C5A;
+}
+
+/* form/login */
+
+.login-form {
+  margin-top: 20px;
+  line-height: 30px;
+}
+
+.btn-login {
+  width: 100px;
+  margin-left: 125px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-login:hover {
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
 }

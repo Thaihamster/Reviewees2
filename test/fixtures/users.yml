@@ -1,0 +1,4 @@
+thaihamster:
+  name: Naohisa Asada
+  email: asadanaohisa8215@gmail.com
+  password_digest: <%= User.digest('password') %>
