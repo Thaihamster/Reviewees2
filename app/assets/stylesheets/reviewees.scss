@@ -6,6 +6,7 @@
 body {
   background-color: #F7F6EB;
   font-family: YuGothic,'Yu Gothic',sans-serif;
+  margin-top:50px;
 }
 
 section {
@@ -340,4 +341,19 @@ input[name="tab_item"] {
   background-color: white;
   color: black;
   transition-duration: 0.4s
+}
+
+.checkbox {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: -10px;
+  span {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
