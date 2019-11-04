@@ -12,6 +12,8 @@ gem 'bcrypt'
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server

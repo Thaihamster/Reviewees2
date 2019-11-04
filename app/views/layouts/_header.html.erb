@@ -17,7 +17,7 @@
             </button>
             <div class="dropdown-menu">
               <%= link_to "プロフィール", current_user %>
-              <%= link_to "設定", '#' %>
+              <%= link_to "編集", edit_user_path(current_user) %>
               <%= link_to "ログアウト", logout_path, method: :delete %>
             </div>
           </li>

@@ -6,7 +6,7 @@
 body {
   background-color: #F7F6EB;
   font-family: YuGothic,'Yu Gothic',sans-serif;
-  margin-top:50px;
+  margin-top:60px;
 }
 
 section {
@@ -254,7 +254,6 @@ input {
   margin-top: 50px;
   padding-bottom: 40px;
   background-color: transparent;
-  width: 700px;
   margin: 0 auto;
 
 }
@@ -263,7 +262,7 @@ input {
   width: calc(100%/3);
   height: 50px;
   border-bottom: 2px solid #C7E6E2;
-  background-color: white;
+  background-color: transparent;
   line-height: 50px;
   font-size: 16px;
   text-align: center;
