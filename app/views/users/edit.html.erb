@@ -13,6 +13,12 @@
         <%= f.label :メールアドレス %>
         <%= f.email_field :email, class: 'form-control' %>
 
+        <%= f.label :プロフィール画像 %>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image", style: "display:none;", id: "file"%>
+        <div class="w-100">
+          <label class="btn btn-file-upload" for="file"><i class="fas fa-plus fa-lg"></i><i class="far fa-images fa-2x"></i>
+        </div>
+
         <%= f.label :パスワード %>
         <%= f.password_field :password, class: 'form-control', :placeholder => "6文字以上" %>
 
@@ -23,3 +29,12 @@
       <% end %>
     </div>
   </div>
+
+  <script type="text/javascript">
+  $('#user_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('許容ファイルサイズは5MBまでです。 他のファイルを選択してください');
+    }
+  });
+</script>

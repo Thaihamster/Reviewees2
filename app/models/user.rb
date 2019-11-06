@@ -8,7 +8,9 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
+  mount_uploader :image, ImageUploader
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validate  :image_size
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -33,5 +35,13 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  private
+
+    def image_size
+      if image.size > 5.megabytes
+        errors.add(:image, "ファイルサイズを5メガ以下にしてください")
+      end
+    end
 
 end

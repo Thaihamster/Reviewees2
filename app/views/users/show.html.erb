@@ -2,7 +2,11 @@
 <div class="container text-center">
   <div class="jumbotron">
     <h3><%= @user.name %></h3>
-    <h5>ユーザー画像挿入位置</h5>
+    <% if @user.image? %>
+      <%= image_tag @user.image.url, class: "profile-image" %>
+    <% else %>
+      <img class="profile-image" src="/no_image.jpeg">
+    <% end %>
   </div>
   <%= render 'users/show' %>
 </div>
