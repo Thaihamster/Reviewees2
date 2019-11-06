@@ -1,0 +1,23 @@
+orange:
+  name: "ハダカラ"
+  content: "悪くない"
+  created_at: <%= 10.minutes.ago %>
+  user: thaihamster
+
+tau_manifesto:
+  name: "ミューズ"
+  content: "良いと思う"
+  created_at: <%= 3.years.ago %>
+  user: thaihamster
+
+cat_video:
+  name: "ソフラン"
+  content: "素晴らしい"
+  created_at: <%= 2.hours.ago %>
+  user: thaihamster
+
+most_recent:
+  name: "ダブ"
+  content: "グッド！"
+  created_at: <%= Time.zone.now %>
+  user: Thaihamster

@@ -205,6 +205,11 @@ input {
   height: auto !important;
 }
 
+.signup-form {
+  margin-top: 30px;
+  line-height: 30px;
+}
+
 .col-md-4 {
   height: 100%;
   margin-top: 20px;
@@ -241,6 +246,16 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.btn-file-upload {
+  border-color: #7B8075;
+  color: #7B8075;
+  background-color: transparent;
+}
+
+.fa-plus {
+  padding-right: 10px;
 }
 
 /* users/show */
@@ -300,6 +315,57 @@ input[name="tab_item"] {
   color: #4B64A1;
 }
 
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 10px;
+}
+
+.underline-image {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-img-top {
+  width: 60%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-bottom: 1.25rem;
+  text-align: center;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+  color: #7E8080;
+  a {
+    color: #7E8080;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: black;
+  }
+}
+
+.card-text {
+  text-align: left;
+  padding-left:10px;
+  margin-bottom: 5px;
+}
+
 /* Flash message */
 
 .alert-success {
@@ -322,7 +388,7 @@ input[name="tab_item"] {
 /* form/login */
 
 .login-form {
-  margin-top: 20px;
+  margin-top: 30px;
   line-height: 30px;
 }
 
@@ -355,4 +421,117 @@ input[name="tab_item"] {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* posts/show */
+.post-show {
+  margin-top: 20px;
+}
+
+.show-img {
+  width: 80%;
+  height: 80%;
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+}
+
+.delete-link {
+  float: left;
+}
+
+.btn-edit {
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-edit:hover {
+  font-weight: bold;
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-delete {
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #CD6349;
+  color: white;
+}
+
+.btn-delete:hover {
+  font-weight: bold;
+  border-color: #CD6349;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.show-img2 {
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+}
+
+.post-name {
+  padding-left: 50px;
+  font-weight: bold;
+}
+
+.display-type h3 {
+  display: inline-block;
+}
+
+.favorite {
+  float: right;
+  padding-right: 60px;
+}
+
+.reviews_category {
+  padding-left: 60px;
+}
+
+.topic-name {
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.post-pictures img {
+  padding-top: 5px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.post-reviewes {
+  padding-top: 10px;
+}
+
+.post-user-picture {
+  width: 70px;
+  height: 70px;
+  border-radius: 60%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  float: left;
+}
+
+.review-detail {
+  float: left;
+}
+
+.product-img-right {
+  padding-top: 20px;
+  width: 30%;
+  height: 30%;
+  float: left;
+}
+
+.favorite-items-title {
+  padding-top: 20px;
+}
+
+.favorite-items-review {
+  padding-top: 10px;
 }

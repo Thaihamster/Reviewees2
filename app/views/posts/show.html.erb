@@ -1,0 +1,117 @@
+<% provide(:title, @post.name) %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="post-show">
+          <% if @post.picture? %>
+            <%= image_tag @post.picture.url, class: "img-responsive center-block show-img" %>
+          <% else %>
+            <img class="img-responsive center-block show-img" src="/image.png">
+          <% end %>
+        <div class="display-type">
+          <h3 class="post-name center"><%= @post.name %></h3>
+          <h3 class="favorite">いいね</h3>
+        </div>
+        <div class="reviews_category">
+          <h5>レビュー</h5>
+          <h5>カテゴリー</h5>
+        </div>
+        <h4 class="center"><%= @post.content %></h4>
+      </div>
+      <div class="row">
+        <h4 class="center">
+          <%= link_to "編集する", edit_post_path, class: "btn btn-edit" %>
+          <%= link_to "削除する", post_path, method: :delete,
+                                            data: { confirm: "この投稿を削除します。本当によろしいですか？" },
+                                            class: "btn btn-delete" %>
+        </h4>
+      </div>
+      <!-- 写真 -->
+      <div class="row">
+        <h2 class="col-lg-4 topic-name">写真</h2>
+      </div>
+      <div class="post-pictures col-lg-offset-1">
+        <div class="col-lg-4">
+          <img class="img-responsive center-block show-img2" src="/image.png">
+        </div>
+        <div class="col-lg-4">
+          <img class="img-responsive show-img2" src="/image.png">
+        </div>
+      </div>
+
+      <!-- レビュー -->
+      <div class="row">
+        <h2 class="col-lg-5 topic-name">レビュー</h2>
+      </div>
+      <div class="w-100">
+        <div class="col-lg-1 col-lg-offset-1 post-reviewes">
+          <img class="post-user-picture" src="/no_image.jpeg">
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-1 review-detail">
+            <h4 style="font-weight: bold;">重宝している</h4>
+            <h5>泡立ちはあまりよくないが、殺菌力が高いとのことで我が家ではミューズを重宝している、
+              やはり風邪を引きたくないので重要視するべきは泡立ちではなく殺菌力だと思う。
+              これからの時期、インフルエンザを始めとした病気が流行りやすくなるため、
+              しっかりと外から帰ってきたら手洗いうがいをしなければ。</h5>
+            <h5>☆☆☆☆☆</h5>
+            <h5 class="text-muted">2019/11/05</h5>
+          </div>
+        </div>
+      </div>
+      <div class="w-100">
+        <div class="col-lg-1 col-lg-offset-1 post-reviewes">
+          <img class="post-user-picture" src="/no_image.jpeg">
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-1 review-detail">
+            <h4 style="font-weight: bold;">悪くはない</h4>
+            <h5>泡立ちはあまりよくないが、殺菌力が高いとのことで我が家ではミューズを重宝している、
+              やはり風邪を引きたくないので重要視するべきは泡立ちではなく殺菌力だと思う。
+              これからの時期、インフルエンザを始めとした病気が流行りやすくなるため、
+              しっかりと外から帰ってきたら手洗いうがいをしなければ。</h5>
+            <h5>☆☆☆☆☆</h5>
+            <h5 class="text-muted">2019/11/05</h5>
+          </div>
+        </div>
+      </div>
+      <h4 class="col-lg-offset-1">ページネーション</h4>
+    </div>
+
+    <!-- カテゴリー(人気) -->
+    <div class="col-lg-5">
+      <div class="row">
+        <h2 class="topic-name col-lg-offset-2">このカテゴリーの人気商品</h2>
+      </div>
+      <div class="col-lg-1 product-img-right">
+        <img class="img-responsive" src="/image.png">
+      </div>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="favorite-items-title">
+            <h4 style="font-weight: bold;"><%= @post.name %></h4>
+          </div>
+          <div class="favorite-items-review">
+            <h5>★★★★☆</h5>
+          </div>
+          <h5 class="text-muted"><%= @post.created_at.strftime('%Y/%m/%d') %></h5>
+        </div>
+      </div>
+      <div class="col-lg-1 product-img-right">
+        <img class="img-responsive" src="/image.png">
+      </div>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="favorite-items-title">
+            <h4 style="font-weight: bold;"><%= @post.name %></h4>
+          </div>
+          <div class="favorite-items-review">
+            <h5>★★★★☆</h5>
+          </div>
+          <h5 class="text-muted"><%= @post.created_at.strftime('%Y/%m/%d') %></h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

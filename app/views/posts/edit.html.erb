@@ -1,0 +1,26 @@
+<% provide(:title, "投稿の編集") %>
+  <div class="container">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="text-center">
+        <h1>投稿の編集</h1>
+      </div>
+      <%= form_for(@post) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :商品名 %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label :感想 %>
+        <%= f.text_area :content %>
+
+        <%= f.label :商品の写真 %>
+        <%= f.file_field :picture, class: "image", style: "display:none;", id: "file"%>
+        <div class="w-100">
+          <label class="btn btn-file-upload" for="file">
+            <i class="fas fa-plus fa-lg"></i><i class="far fa-images fa-2x"></i>
+        </div>
+
+        <%= f.submit "更新", class: "btn btn-signup" %>
+      <% end %>
+    </div>
+  </div>

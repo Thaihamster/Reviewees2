@@ -1,0 +1,34 @@
+<div class="tabs jumbotron">
+  <input id="all" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="all"><i class="far fa-clipboard"></i></label>
+  <input id="programming" type="radio" name="tab_item">
+  <label class="tab_item" for="programming"><i class="far fa-comments"></i></label>
+  <input id="design" type="radio" name="tab_item">
+  <label class="tab_item" for="design"><i class="far fa-heart"></i></label>
+  <div class="tab_content" id="all_content">
+    <div class="tab_content_description">
+      <div class="container">
+        <div class="row">
+          <% if @user.posts.any? %>
+            <div class="col-md-3">
+              <%= render @posts %>
+            </div>
+          <% else %>
+            <p class="c-txtsp">まだ投稿がありません</p>
+            <%= will_paginate @posts %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab_content" id="programming_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">レビュー</p>
+    </div>
+  </div>
+  <div class="tab_content" id="design_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">いいね</p>
+    </div>
+  </div>
+</div>

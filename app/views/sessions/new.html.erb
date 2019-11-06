@@ -1,27 +1,27 @@
 <% provide(:title, "ログイン") %>
   <div class="container">
     <div class="login-form">
-    <div class="col-md-4 col-md-offset-4">
-      <div class="text-center">
-        <h1>ログイン</h1>
-      </div>
-      <%= form_for(:session, url: login_path) do |f| %>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="text-center">
+          <h1>ログイン</h1>
+        </div>
+        <%= form_for(:session, url: login_path) do |f| %>
 
-        <%= f.label :メールアドレス %>
-        <%= f.email_field :email, class: 'form-control' %>
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label :パスワード %>
-        <%= f.password_field :password, class: 'form-control' %>
+          <%= f.label :パスワード %>
+          <%= f.password_field :password, class: 'form-control' %>
 
-        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.label :remember_me, class: "checkbox inline" do %>
           <%= f.check_box :remember_me %>
           <span>ログインしたままにする</span>
-        <% end %>
+          <% end %>
 
         <%= f.submit "ログイン", class: "btn btn-login" %>
       <% end %>
 
-      <p>会員登録がまだの方は <%= link_to "こちら", signup_path %> から</p>
-    </div>
+        <p>会員登録がまだの方は <%= link_to "こちら", signup_path %> から</p>
+      </div>
     </div>
   </div>
