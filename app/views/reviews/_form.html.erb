@@ -1,0 +1,25 @@
+<%=  form_for([@post, @review]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :タイトル %><span class="badge badge-danger">必須</span>
+  <%= f.text_field :title, class: 'form-control', :placeholder => "おすすめです！" %>
+
+  <%= f.label :レーティング %><span class="badge badge-danger">必須</span>
+  <div id='star-rating'>
+  <%= f.hidden_field :rating, id: 'star-rating' %>
+  </div>
+
+  <%= f.label :コメント %><span class="badge badge-secondary">任意</span>
+  <%= f.text_area :content, class: 'form-control', :placeholder => "140文字以内でコメントを書いてください" %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <%= f.submit "投稿", class: "btn btn-signup" %>
+<% end %>
+
+<script>
+$('#star-rating').raty({
+path: '/assets/',
+scoreName: 'review[rating]',
+});
+</script>

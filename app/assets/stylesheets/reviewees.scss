@@ -52,6 +52,19 @@ p {
   line-height: 1.7em;
 }
 
+/* fontawsome(star) */
+.star-harf {
+  color: #F2B33D;
+}
+
+.star-off {
+  color: #5D6562;
+}
+
+.star-on {
+  color: #F2B33D;
+}
+
 /* header */
 .navbar {
   background-color: white;
@@ -453,6 +466,10 @@ input[name="tab_item"] {
   color: white;
 }
 
+.avg-review {
+  font-size: 20px;
+}
+
 .btn-edit:hover {
   font-weight: bold;
   border-color: #285294;
@@ -528,6 +545,63 @@ input[name="tab_item"] {
   float: left;
 }
 
+.review-link {
+  float: right;
+}
+
+.btn-post-review {
+  font-weight: bold;
+  margin-right: 40px;
+  margin-top: 40px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-post-review:hover {
+  font-weight: bold;
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.review-change {
+  float: right;
+}
+
+.btn-review-edit {
+  font-weight: bold;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-review-edit:hover {
+  font-weight: bold;
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-review-delete {
+  font-weight: bold;
+  background-color: #CD6349;
+  color: white;
+}
+
+.btn-review-delete:hover {
+  font-weight: bold;
+  border-color: #CD6349;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.pagination {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
 .product-img-right {
   padding-top: 20px;
   width: 30%;
@@ -541,4 +615,18 @@ input[name="tab_item"] {
 
 .favorite-items-review {
   padding-top: 10px;
+}
+
+/* reviews/new */
+.badge-danger {
+  margin-left: 5px;
+  background-color: #C41A41;
+}
+
+.badge-secondary {
+  margin-left: 5px;
+}
+
+#star-rating {
+  margin-bottom: 15px;
 }

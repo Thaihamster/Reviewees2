@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: [:edit, :destroy]
 
   def new
     @post = Post.new
@@ -8,6 +8,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @reviews = @post.reviews.paginate(page: params[:page], per_page: 3)
+    if @reviews.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
+    end
   end
 
   def create
@@ -48,6 +54,7 @@ class PostsController < ApplicationController
 
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
+      flash[:danger] = "権限がありません"
       redirect_to root_url if @post.nil?
     end
 end

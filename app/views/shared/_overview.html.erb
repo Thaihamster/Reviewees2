@@ -1,0 +1,29 @@
+<div class="post-show">
+  <% if @post.picture? %>
+    <%= image_tag @post.picture.url, class: "img-responsive center-block show-img" %>
+  <% else %>
+    <img class="img-responsive center-block show-img" src="/image.png">
+  <% end %>
+  <div class="display-type">
+    <h3 class="post-name center"><%= @post.name %></h3>
+    <h3 class="favorite">いいね</h3>
+  </div>
+  <div class="avg-review">
+    <div class="star-rating center" data-score= <%= @avg_review %> ></div>
+  </div>
+  <div class="row">
+    <h5 class="col-lg-4 col-lg-offset-1">カテゴリー</h5>
+  </div>
+  <h4 class="center"><%= @post.content %></h4>
+</div>
+<!-- 削除・編集ボタン -->
+<div class="row">
+  <h4 class="center">
+    <% if current_user.id == @post.user_id || current_user.admin? %>
+      <%= link_to "編集する", edit_post_path, class: "btn btn-edit" %>
+      <%= link_to "削除する", post_path, method: :delete,
+                                    data: { confirm: "この投稿を削除します。本当によろしいですか？" },
+                                    class: "btn btn-delete" %>
+    <% end %>
+  </h4>
+</div>

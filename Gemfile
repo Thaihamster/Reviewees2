@@ -15,7 +15,7 @@ gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server
