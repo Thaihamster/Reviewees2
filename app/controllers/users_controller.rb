@@ -4,8 +4,10 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def show
-    @user  = User.find(params[:id])
-    @posts = @user.posts.paginate(page: params[:page])
+    @user    = User.find(params[:id])
+    @posts   = @user.posts.paginate(page: params[:page], per_page: 6)
+    @reviews = @user.reviews.paginate(page: params[:page], per_page: 5)
+    @likes   = @user.likes.paginate(page: params[:page], per_page: 6)
   end
 
   def new

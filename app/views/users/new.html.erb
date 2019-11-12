@@ -8,22 +8,22 @@
         <%= form_for(@user) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
 
-          <%= f.label :名前 %>
+          <%= f.label :名前 %><span class="badge badge-danger">必須</span>
           <%= f.text_field :name, class: 'form-control', :placeholder => "例)タイハムスター" %>
 
-          <%= f.label :メールアドレス %>
+          <%= f.label :メールアドレス %><span class="badge badge-danger">必須</span>
           <%= f.email_field :email, class: 'form-control', :placeholder => "例)example@google.com" %>
 
-          <%= f.label :プロフィール画像 %>
+          <%= f.label :プロフィール画像 %><span class="badge badge-secondary">任意</span>
           <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image", style: "display:none;", id: "file"%>
           <div class="w-100">
             <label class="btn btn-file-upload" for="file"><i class="fas fa-plus fa-lg"></i><i class="far fa-images fa-2x"></i>
           </div>
 
-          <%= f.label :パスワード %>
+          <%= f.label :パスワード %><span class="badge badge-danger">必須</span>
           <%= f.password_field :password, class: 'form-control', :placeholder => "6文字以上" %>
 
-          <%= f.label :password_confirmation, "パスワード(確認)" %>
+          <%= f.label :password_confirmation, "パスワード(確認)" %><span class="badge badge-danger">必須</span>
           <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "6文字以上" %>
 
           <%= f.submit "登録", class: "btn btn-signup" %>

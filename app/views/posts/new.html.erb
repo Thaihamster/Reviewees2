@@ -7,13 +7,13 @@
       <%= form_for(@post) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.label :商品名 %>
+        <%= f.label :商品名 %><span class="badge badge-danger">必須</span>
         <%= f.text_field :name, class: 'form-control', :placeholder => "例）キレイキレイ" %>
 
-        <%= f.label :感想 %>
+        <%= f.label :感想 %><span class="badge badge-danger">必須</span>
         <%= f.text_area :content, :placeholder => "250文字以内で感想を書いてください" %>
 
-        <%= f.label :商品の写真 %>
+        <%= f.label :商品の写真 %><span class="badge badge-secondary">任意</span>
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: "image", style: "display:none;", id: "file"%>
         <div class="w-100">
           <label class="btn btn-file-upload" for="file"><i class="fas fa-plus fa-lg"></i><i class="far fa-images fa-2x"></i>

@@ -1,12 +1,26 @@
-<div class="row">
-  <h2 class="col-lg-5 topic-name">レビュー</h2>
-</div>
-<%= render @reviews %>
-<div class="col-lg-offset-3 review-link">
-  <%= link_to "レビューを投稿する", new_post_review_path(@post), class: "btn btn-post-review" %>
-</div>
-<div class="col-lg-offset-2 pagination">
-  <%= will_paginate @reviews, renderer: BootstrapPagination::Rails,
-  previous_label: '&nbsp;前', next_label: '次',
-  inner_window: 1, outer_window: 0 %>
-</div>
+  <div class="col-lg-12 col-lg-offset-4">
+    <div class="row">
+      <div class="col-lg-1">
+        <% if review.user.image? %>
+          <%= image_tag review.user.image.url, class: "post-user-picture" %>
+        <% else %>
+          <img class="post-user-picture" src="/no_image.jpeg">
+        <% end %>
+      </div>
+      <div class="col-lg-10 user-review-detail">
+        <h4 class="text-left" style="font-weight: bold;">
+          <%= link_to review.post.name, post_path(review.post) %>/
+          <%= link_to review.title, post_path(review.post) %>
+        </h4>
+        <h4 class="text-left"><%= review.content %></h4>
+        <div class="row pull-left">
+          <div class="col-lg-4">
+            <h5 class="text-muted"><%= review.created_at.strftime('%Y/%m/%d') %></h5>
+          </div>
+          <div class="col-lg-7">
+            <h5 class="star-rating" data-score= <%= review.rating %> ></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

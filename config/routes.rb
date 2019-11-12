@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'users/new'
-
   root 'static_pages#home'
   get    '/about',    to: 'static_pages#about'
   get    '/privacy',  to: 'static_pages#privacy'
@@ -16,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :reviews
+    resources :likes, only: [:create, :destroy]
   end
 
 end

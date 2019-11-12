@@ -65,6 +65,14 @@ p {
   color: #F2B33D;
 }
 
+.heart-on {
+  color: #DE5065;
+}
+
+.heart-off {
+  color: #DE5065;
+}
+
 /* header */
 .navbar {
   background-color: white;
@@ -180,21 +188,18 @@ p {
 footer {
   height: auto;
   margin-top: 20px;
-  padding-top: 5px;
+  padding-top: 30px;
   background-color: #4B64A1;
   p {
     color: white;
   }
   ul {
-    float: right;
-    padding-right: 43%;
     list-style: none;
+    padding-left: 0;
   }
   li {
     color: white;
     padding-top: 20px;
-    float: left;
-    margin-left: 15px;
   }
   a {
     color: white;
@@ -202,6 +207,13 @@ footer {
   }
   a:hover {
     color:white;
+    text-decoration: none;
+  }
+  .list-inline {
+    text-align: center;
+  }
+  .list-inline li {
+    display: inline;
   }
 }
 
@@ -343,6 +355,7 @@ input[name="tab_item"] {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
+  margin-bottom: 10px;
   background-color: white;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -384,6 +397,36 @@ input[name="tab_item"] {
   text-align: left;
   padding-left:10px;
   margin-bottom: 5px;
+}
+
+.rating-user-show {
+  float: left;
+  padding-left: 70px;
+}
+
+.user-likes {
+  float: left;
+  padding-left: 10px;
+}
+
+.user-reviews-count {
+  float: left;
+  padding-left: 10px;
+}
+
+.user-review-detail {
+  margin-bottom: 10px;
+}
+
+.text-left {
+  a {
+    color: #7E8080;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: black;
+  }
 }
 
 /* Flash message */
@@ -505,11 +548,6 @@ input[name="tab_item"] {
 
 .display-type h3 {
   display: inline-block;
-}
-
-.favorite {
-  float: right;
-  padding-right: 60px;
 }
 
 .reviews_category {

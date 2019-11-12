@@ -5,11 +5,34 @@
     <img class="img-responsive center-block show-img" src="/image.png">
   <% end %>
   <div class="display-type">
-    <h3 class="post-name center"><%= @post.name %></h3>
-    <h3 class="favorite">いいね</h3>
-  </div>
-  <div class="avg-review">
-    <div class="star-rating center" data-score= <%= @avg_review %> ></div>
+    <h3 class="col-lg-4 post-name"><%= @post.name %></h3>
+    <h3 class="col-lg-5">
+      <div class="star-rating" data-score= <%= @avg_review %> ></div>
+    </h3>
+    <h3 id="like" class="col-lg-1">
+      <% if logged_in? %>
+        <% if @post.liked_by?(current_user) %>
+          <%= link_to post_like_path(@post, @post.likes.find_by(user_id: current_user.id)),
+                                     method: :delete, id: "like", remote: true do %>
+            <div class="likes-icon">
+              <i class="fas fa-heart heart-on fa-lg"></i>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to post_likes_path(post), method: :post, id: "like", remote: true do %>
+            <div class="likes-icon">
+              <i class="far fa-heart heart-off fa-lg"></i>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to login_path do %>
+          <div class="likes-icon">
+            <i class="fas.fa-heart"></i>
+          </div>>
+        <% end %>
+      <% end %>
+    </h3>
   </div>
   <div class="row">
     <h5 class="col-lg-4 col-lg-offset-1">カテゴリー</h5>

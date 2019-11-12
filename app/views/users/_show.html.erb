@@ -9,26 +9,68 @@
     <div class="tab_content_description">
       <div class="container">
         <div class="row">
-          <% if @user.posts.any? %>
-            <div class="col-md-3">
+          <div class="col-lg-12">
+            <% if @user.posts.any? %>
               <%= render @posts %>
-            </div>
-          <% else %>
+            <% else %>
             <p class="c-txtsp">まだ投稿がありません</p>
-            <%= will_paginate @posts %>
-          <% end %>
+            <% end %>
+            <div class="row">
+              <div class="col-lg-12">
+                <%= will_paginate @posts, renderer: BootstrapPagination::Rails,
+                previous_label: '&nbsp;前', next_label: '次',
+                inner_window: 1, outer_window: 0 %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="tab_content" id="programming_content">
     <div class="tab_content_description">
-      <p class="c-txtsp">レビュー</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <% if @user.reviews.any? %>
+              <%= render partial: 'shared/review', collection: @reviews %>
+            <% else %>
+              <p class="c-txtsp">まだレビューを投稿していません</p>
+            <% end %>
+            <div class="row">
+              <div class="col-lg-12">
+                <%= will_paginate @reviews, renderer: BootstrapPagination::Rails,
+                previous_label: '&nbsp;前', next_label: '次',
+                inner_window: 1, outer_window: 0 %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="tab_content" id="design_content">
     <div class="tab_content_description">
-      <p class="c-txtsp">いいね</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <% if @user.likes.any? %>
+              <%= render @likes %>
+            <% else %>
+              <p class="c-txtsp">いいねした投稿がありません</p>
+            <% end %>
+            <div class="row">
+              <div class="col-lg-12">
+                <%= will_paginate @likes, renderer: BootstrapPagination::Rails,
+                previous_label: '&nbsp;前', next_label: '次',
+                inner_window: 1, outer_window: 0 %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

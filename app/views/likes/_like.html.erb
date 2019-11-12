@@ -1,33 +1,33 @@
 <div class="col-lg-4">
   <div class="card">
     <div class="underline-image">
-      <% if post.picture? %>
-        <%= image_tag post.picture.url, class: "card-img-top"%>
+      <% if like.post.picture? %>
+        <%= image_tag like.post.picture.url, class: "card-img-top"%>
       <% else %>
         <img class="card-img-top" src="/image3.png">
       <% end %>
     </div>
     <div class="card-body">
-      <h4 class="card-title"><%= link_to post.name, post_path(post) %></h4>
+      <h4 class="card-title"><%= link_to like.post.name, post_path(like.post) %></h4>
       <h5 class="card-text">カテゴリー</h5>
     </div>
     <div class="row">
       <!-- いつの日かリファクタリングする -->
-      <% reviews = Review.where(post_id: post.id) %>
+      <% reviews = Review.where(post_id: like.post.id) %>
       <% avg_review = reviews.average(:rating) %>
       <div class="rating-user-show">
         <div class="star-rating" data-score= <%= avg_review %> ></div>
       </div>
       <div class="user-likes">
         <i class="fas fa-heart heart-on fa-lg"></i>
-        <%= post.likes.count %>
+        <%= like.post.likes.count %>
       </div>
       <div class="user-reviews-count">
         <i class="fas fa-comment-dots fa-lg"></i>
-        <%= post.reviews.count %>
+        <%= like.post.reviews.count %>
       </div>
     </div>
-    <h5 class="text-muted card-text"><%= post.created_at.strftime('%Y/%m/%d') %></h5>
+    <h5 class="text-muted card-text"><%= like.post.created_at.strftime('%Y/%m/%d') %></h5>
   </div>
 </div>
 
