@@ -228,6 +228,10 @@ p {
   margin-left: 20px;
 }
 
+.badge-light-home {
+  text-align: center;
+}
+
 .badge-danger {
   margin-left: 5px;
   background-color: #C41A41;
@@ -316,12 +320,18 @@ p {
   font-family: 'Yu Gothic UI';
 }
 
-/* about */
+.home-about {
+  background-color: white;
+  margin-bottom:20px;
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgba(0,0.1,0,0.1));
+}
 
-.col-sm-4 {
-  padding-top: 20px;
-  background-color: #F6FBF6;
-  border-radius: 15px;
+/* popular・latest(home) */
+
+.topic-title {
+  float: left;
+  padding-left: 20px;
 }
 
 /* Footer */
@@ -488,6 +498,7 @@ input[name="tab_item"] {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgba(0,0.1,0,0.1));
 }
 
 .underline-image {

@@ -1,0 +1,17 @@
+<section>
+  <div class="container col-lg-10 col-lg-offset-1">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="topic-title">
+          <h1 style="font-weight: bold;">新着商品</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 center">
+        <%= render partial: 'shared/home_latest', collection: Post.fetch_latest_posts.first(4),
+        as: :post, cached: true %>
+      </div>
+    </div>
+  </div>
+</section>

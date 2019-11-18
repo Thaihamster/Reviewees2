@@ -1,0 +1,31 @@
+<div class="col-lg-3">
+  <div class="card">
+    <div class="underline-image center">
+      <% if post.picture? %>
+        <%= image_tag post.picture.url, class: "card-img-top"%>
+      <% else %>
+        <img class="card-img-top" src="/image.png">
+      <% end %>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"><%= link_to post.name, post_path(post) %></h4>
+      <h5>
+        <span class="badge badge-pill badge-light-home">
+          <%= post.child_category.name %>
+        </span>
+      </h5>
+    </div>
+    <div class="row">
+      <!-- いつの日かリファクタリングする -->
+      <% reviews = Review.where(post_id: post.id) %>
+      <% avg_review = reviews.average(:rating) %>
+      <ul class="list-inline">
+      <li class="star-rating list-inline-item" data-score= <%= avg_review %> >
+      <li class="list-inline-item avg-rate"><%= avg_review %>
+      <li class="list-inline-item">
+        <i class="fas fa-comment-dots comment-icon"></i>
+        <%= post.reviews.count %>
+      </li>
+    </div>
+  </div>
+</div>

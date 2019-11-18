@@ -7,3 +7,15 @@
   </div>
 </div>
 <%= render 'layouts/about' %>
+<%= render 'layouts/popular' %>
+<%= render 'layouts/latest' %>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
