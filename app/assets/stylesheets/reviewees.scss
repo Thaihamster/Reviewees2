@@ -66,11 +66,180 @@ p {
 }
 
 .heart-on {
-  color: #DE5065;
+  color: #9D2932;
 }
 
 .heart-off {
   color: #DE5065;
+}
+
+/* btn (bootstrap) */
+.btn-dropdown {
+  margin-top: 6px;
+  margin-left: 5px;
+  font-weight: bold;
+  border-color: #2B7396;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.btn-dropdown:hover {
+  color: white;
+  background-color: #2B7396;
+  transition-duration: 0.4s;
+}
+
+.btn-primary-home {
+  background-color: #2B7396;
+  color: white;
+  font-weight: bold;
+  transition-duration: 0.4s
+}
+
+.btn-primary-home:hover {
+  background-color: white;
+  border-color: #2B7396;
+  color: black;
+}
+
+.btn-signup {
+  width: 100px;
+  margin-left: 125px;
+  margin-bottom: 20px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-signup:hover {
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-file-upload {
+  border-color: #7B8075;
+  color: #7B8075;
+  background-color: transparent;
+}
+
+.btn-login {
+  width: 100px;
+  margin-left: 125px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-login:hover {
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-edit {
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-edit:hover {
+  font-weight: bold;
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-delete {
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #CD6349;
+  color: white;
+}
+
+.btn-delete:hover {
+  font-weight: bold;
+  border-color: #CD6349;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-post-review {
+  font-weight: bold;
+  margin-right: 40px;
+  margin-top: 40px;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-post-review:hover {
+  font-weight: bold;
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-review-edit {
+  font-weight: bold;
+  background-color: #285294;
+  color: white;
+}
+
+.btn-review-edit:hover {
+  font-weight: bold;
+  border-color: #285294;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-review-delete {
+  font-weight: bold;
+  background-color: #CD6349;
+  color: white;
+}
+
+.btn-review-delete:hover {
+  font-weight: bold;
+  border-color: #CD6349;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.btn-heart {
+  background-color: white;
+  border-style: none;
+  border-radius: 50%
+}
+
+.btn-heart:hover {
+  background-color: white;
+}
+
+/* badge (bootstrap) */
+.badge-light {
+  margin-left: 20px;
+}
+
+.badge-danger {
+  margin-left: 5px;
+  background-color: #C41A41;
+}
+
+.badge-danger {
+  margin-left: 5px;
+  background-color: #C41A41;
+}
+
+.badge-secondary {
+  margin-left: 5px;
 }
 
 /* header */
@@ -106,21 +275,6 @@ p {
   padding-top: 15px;
   font-weight: bold;
   text-decoration: none;
-}
-
-.btn-dropdown {
-  margin-top: 6px;
-  margin-left: 5px;
-  font-weight: bold;
-  border-color: #2B7396;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.btn-dropdown:hover {
-  color: white;
-  background-color: #2B7396;
-  transition-duration: 0.4s;
 }
 
 .dropdown-menu {
@@ -160,19 +314,6 @@ p {
 
 .site-description {
   font-family: 'Yu Gothic UI';
-}
-
-.btn-primary-home {
-  background-color: #2B7396;
-  color: white;
-  font-weight: bold;
-  transition-duration: 0.4s
-}
-
-.btn-primary-home:hover {
-  background-color: white;
-  border-color: #2B7396;
-  color: black;
 }
 
 /* about */
@@ -217,7 +358,7 @@ footer {
   }
 }
 
-/* form/signup */
+/* form */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -243,21 +384,6 @@ input {
   border-radius: 10px;
 }
 
-.btn-signup {
-  width: 100px;
-  margin-left: 125px;
-  margin-bottom: 20px;
-  background-color: #285294;
-  color: white;
-}
-
-.btn-signup:hover {
-  border-color: #285294;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
-}
-
 #error_explanation {
   ul {
     color: red;
@@ -273,14 +399,16 @@ input {
   }
 }
 
-.btn-file-upload {
-  border-color: #7B8075;
-  color: #7B8075;
-  background-color: transparent;
-}
-
 .fa-plus {
   padding-right: 10px;
+}
+
+.prev-image img {
+  width: 40%;
+  height: 40%;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  margin: 10px 10px;
 }
 
 /* users/show */
@@ -455,22 +583,6 @@ input[name="tab_item"] {
   line-height: 30px;
 }
 
-.btn-login {
-  width: 100px;
-  margin-left: 125px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #285294;
-  color: white;
-}
-
-.btn-login:hover {
-  border-color: #285294;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
-}
-
 .checkbox {
   margin-top: 10px;
   margin-left: 10px;
@@ -494,60 +606,47 @@ input[name="tab_item"] {
 .show-img {
   width: 80%;
   height: 80%;
-  border-radius: 15px;
-  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
 }
 
 .delete-link {
   float: left;
 }
 
-.btn-edit {
-  font-weight: bold;
-  margin-top: 20px;
-  background-color: #285294;
-  color: white;
-}
-
 .avg-review {
   font-size: 20px;
 }
 
-.btn-edit:hover {
-  font-weight: bold;
-  border-color: #285294;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
-}
-
-.btn-delete {
-  font-weight: bold;
-  margin-top: 20px;
-  background-color: #CD6349;
-  color: white;
-}
-
-.btn-delete:hover {
-  font-weight: bold;
-  border-color: #CD6349;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
-}
-
 .show-img2 {
-  border-radius: 15px;
-  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+  width: 32%;
+  height: 32%;
+  float: left;
 }
 
 .post-name {
-  padding-left: 50px;
   font-weight: bold;
+  font-size: 25px;
 }
 
-.display-type h3 {
-  display: inline-block;
+.heart-size {
+  font-size: 20px;
+}
+
+.list-inline-overview {
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.list-inline-overview li {
+  display: inline;
+}
+
+.avg-rate {
+  color: #F2B33D;
+}
+
+.heart-count {
+  color: #9D2932;
 }
 
 .reviews_category {
@@ -587,52 +686,8 @@ input[name="tab_item"] {
   float: right;
 }
 
-.btn-post-review {
-  font-weight: bold;
-  margin-right: 40px;
-  margin-top: 40px;
-  background-color: #285294;
-  color: white;
-}
-
-.btn-post-review:hover {
-  font-weight: bold;
-  border-color: #285294;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
-}
-
 .review-change {
   float: right;
-}
-
-.btn-review-edit {
-  font-weight: bold;
-  background-color: #285294;
-  color: white;
-}
-
-.btn-review-edit:hover {
-  font-weight: bold;
-  border-color: #285294;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
-}
-
-.btn-review-delete {
-  font-weight: bold;
-  background-color: #CD6349;
-  color: white;
-}
-
-.btn-review-delete:hover {
-  font-weight: bold;
-  border-color: #CD6349;
-  background-color: white;
-  color: black;
-  transition-duration: 0.4s
 }
 
 .pagination {
@@ -640,31 +695,38 @@ input[name="tab_item"] {
   font-weight: bold;
 }
 
-.product-img-right {
-  padding-top: 20px;
+/* sidebar */
+.line {
+  width: 90%;
+  height: 1px;
+  margin: 16px 0;
+  margin-left: 10px;
+  border-top: 1px solid #DDDDDD
+}
+
+.sidebar-img {
+  padding-top: 5px;
   width: 30%;
   height: 30%;
   float: left;
 }
 
-.favorite-items-title {
-  padding-top: 20px;
+.sidebar-title {
+  a {
+    color: #7E8080;
+    text-decoration: none;
+  }
 }
 
-.favorite-items-review {
-  padding-top: 10px;
+.sidebar-category {
+  float: left;
+}
+
+.comment-icon {
+  color: #5D6562
 }
 
 /* reviews/new */
-.badge-danger {
-  margin-left: 5px;
-  background-color: #C41A41;
-}
-
-.badge-secondary {
-  margin-left: 5px;
-}
-
 #star-rating {
   margin-bottom: 15px;
 }

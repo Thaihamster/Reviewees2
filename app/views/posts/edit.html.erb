@@ -7,17 +7,32 @@
       <%= form_for(@post) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.label :商品名 %>
+        <%= f.label :商品名 %><span class="badge badge-danger">必須</span>
         <%= f.text_field :name, class: 'form-control' %>
 
-        <%= f.label :感想 %>
+        <%= f.label :メインカテゴリー %><span class="badge badge-danger">必須</span>
+        <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name),
+        {:include_blank => "一つ選んでください"}, id: 'category_id' %>
+
+        <%= f.label :サブカテゴリ― %><span class="badge badge-danger">必須</span>
+        <%= f.select :child_category_id, options_from_collection_for_select(ChildCategory.all, :id, :name),
+        {:include_blank => "一つ選んでください"}, id: 'child_category_id' %>
+
+        <%= f.label :感想 %><span class="badge badge-danger">必須</span>
         <%= f.text_area :content %>
 
-        <%= f.label :商品の写真 %>
+        <%= f.label :商品の写真 %><span class="badge badge-secondary">任意</span>
         <%= f.file_field :picture, class: "image", style: "display:none;", id: "file"%>
         <div class="w-100">
           <label class="btn btn-file-upload" for="file">
             <i class="fas fa-plus fa-lg"></i><i class="far fa-images fa-2x"></i>
+        </div>
+        <div class="row prev-image center">
+          <% if @post.picture.present? %>
+            <%= image_tag @post.image, id: :img_prev, class: 'prev-image' %>
+          <% else %>
+            <%= image_tag "/image.png", id: :img_prev, class: 'prev-image' %>
+          <% end %>
         </div>
 
         <%= f.submit "更新", class: "btn btn-signup" %>
@@ -26,10 +41,26 @@
   </div>
 
   <script type="text/javascript">
-  $('#post_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('許容ファイルサイズは5MBまでです。 他のファイルを選択してください');
-    }
+    $(function() {
+    $('#category_id').change(function() {
+      $.ajax({
+        url: 'get_category_children',
+        data: { category_id: $('#category_id').has('option:selected').val() }
+      });
+    });
   });
-</script>
+    $(function() {
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+    $('#img_prev').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+        }
+      }
+    $("#file").change(function(){
+        readURL(this);
+      });
+    });
+  </script>

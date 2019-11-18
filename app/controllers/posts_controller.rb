@@ -46,15 +46,18 @@ class PostsController < ApplicationController
     redirect_to root_url
   end
 
+  def get_category_children
+    @category_children = ChildCategory.where(category_id: params[:category_id])
+  end
+
   private
 
     def post_params
-      params.require(:post).permit(:name, :content, :picture)
+      params.require(:post).permit(:name, :content, :picture, :category_id, :child_category_id)
     end
 
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
-      flash[:danger] = "権限がありません"
       redirect_to root_url if @post.nil?
     end
 end

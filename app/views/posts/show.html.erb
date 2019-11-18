@@ -1,7 +1,7 @@
 <% provide(:title, @post.name) %>
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <%= render 'shared/overview' %>
       <!-- 写真 -->
         <%= render 'shared/photo' %>
@@ -12,38 +12,17 @@
     <!-- カテゴリー(人気) -->
     <div class="col-lg-5">
       <div class="row">
-        <h2 class="topic-name col-lg-offset-2">このカテゴリーの人気商品</h2>
+        <h2 class="topic-name col-lg-offset-1">人気商品</h2>
       </div>
-      <div class="col-lg-1 product-img-right">
-        <img class="img-responsive" src="/image.png">
-      </div>
+      <%= render partial: 'shared/sidebar-popular', collection: Post.fetch_popular_posts.first(3),
+      as: :post, cached: true %>
+      <div class="row line"></div>
       <div class="row">
-        <div class="col-lg-5">
-          <div class="favorite-items-title">
-            <h4 style="font-weight: bold;"><%= @post.name %></h4>
-          </div>
-          <div class="favorite-items-review">
-            <h5>★★★★☆</h5>
-          </div>
-          <h5 class="text-muted"><%= @post.created_at.strftime('%Y/%m/%d') %></h5>
-        </div>
+        <h2 class="topic-name col-lg-offset-1">新着商品</h2>
       </div>
-      <div class="col-lg-1 product-img-right">
-        <img class="img-responsive" src="/image.png">
-      </div>
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="favorite-items-title">
-            <h4 style="font-weight: bold;"><%= @post.name %></h4>
-          </div>
-          <div class="favorite-items-review">
-            <h5>★★★★☆</h5>
-          </div>
-          <h5 class="text-muted"><%= @post.created_at.strftime('%Y/%m/%d') %></h5>
-        </div>
-      </div>
+      <%= render partial: 'shared/sidebar-latest', collection: Post.fetch_latest_posts.first(3),
+      as: :post, cached: true %>
     </div>
-
   </div>
 </div>
 

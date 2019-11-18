@@ -70,9 +70,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
-  test "associated microposts should be destroyed" do
+  test "associated posts should be destroyed" do
     @user.save
-    @user.posts.create!(name: "キレイキレイ", content: "泡立ちがよく、洗浄力が高い")
+    @user.posts.create!(name: "キレイキレイ", content: "泡立ちがよく、洗浄力が高い", picture: "image.png",
+                        category_id: 3, child_category_id: 1)
     assert_difference 'Post.count', -1 do
       @user.destroy
     end

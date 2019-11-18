@@ -1,7 +1,11 @@
 <div class="row">
   <h2 class="col-lg-5 topic-name">レビュー</h2>
 </div>
-<%= render @reviews %>
+<% if @post.reviews.any? %>
+  <%= render @reviews %>
+<% else %>
+  <h2 class="c-txtsp text-center">まだレビューがありません</h2>
+<% end %>
 <div class="col-lg-offset-3 review-link">
   <%= link_to "レビューを投稿する", new_post_review_path(@post), class: "btn btn-post-review" %>
 </div>
