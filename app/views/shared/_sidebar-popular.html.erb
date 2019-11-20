@@ -18,7 +18,7 @@
         <% reviews = Review.where(post_id: post.id) %>
         <% avg_review = reviews.average(:rating) %>
         <ul class="list-inline">
-        <li class="star-rating-sidebar list-inline-item" data-score= <%= avg_review %> >
+        <li class="star-rating-read list-inline-item" data-score= <%= avg_review %> >
         <li class="list-inline-item avg-rate"><%= avg_review %>
         <li class="list-inline-item">
           <i class="fas fa-comment-dots comment-icon"></i>
@@ -32,13 +32,3 @@
     <h5 class="text-muted"><%= post.created_at.strftime('%Y/%m/%d') %></h5>
   </div>
 </div>
-
-<script>
-    $('.star-rating-sidebar').raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function() {
-            return $(this).attr('data-score');
-    }
-  });
-</script>

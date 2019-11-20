@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'child_category/child_categories'
-
   root 'static_pages#home'
   controller :static_pages do
     get :about
@@ -24,7 +22,7 @@ Rails.application.routes.draw do
       get 'get_category_children'
     end
     resources :reviews
-    resources :likes, only: [:create, :destroy]
+    resources :likes,  only: [:create, :destroy]
   end
 
   resources :categories, only: [:show]

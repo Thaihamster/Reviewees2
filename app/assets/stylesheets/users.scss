@@ -1,3 +1,146 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* show */
+
+.jumbotron {
+  position: relative;
+  background-color: transparent;
+}
+
+.profile-image {
+  background-position: center;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+}
+
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: transparent;
+  margin: 0 auto;
+
+}
+
+.tab_item {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 2px solid #C7E6E2;
+  background-color: transparent;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
+
+.tabs input:checked + .tab_item {
+  border-bottom: 2px solid #4B64A1;
+  color: #4B64A1;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+  background-color: white;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgba(0,0.1,0,0.1));
+}
+
+.underline-image {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-img-top {
+  width: 60%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-bottom: 1.25rem;
+  text-align: center;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+  color: #7E8080;
+  a {
+    color: #7E8080;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: black;
+  }
+}
+
+.card-text {
+  text-align: left;
+  padding-left:10px;
+  margin-bottom: 5px;
+}
+
+.rating-user-show {
+  float: left;
+  padding-left: 70px;
+}
+
+.user-likes {
+  float: left;
+  padding-left: 10px;
+}
+
+.user-reviews-count {
+  float: left;
+  padding-left: 10px;
+}
+
+.user-review-detail {
+  margin-bottom: 10px;
+}
+
+.text-left {
+  a {
+    color: #7E8080;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: black;
+  }
+}

@@ -3,9 +3,6 @@
     <div class="row">
       <div class="col-lg-6">
         <%= render 'shared/overview' %>
-      <!-- 写真 -->
-        <%= render 'shared/photo' %>
-      <!-- レビュー -->
         <%= render 'shared/review_post' %>
       </div>
 
@@ -27,11 +24,11 @@
 </div>
 
 <script>
-    $('.star-rating').raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function() {
-            return $(this).attr('data-score');
+  $('.star-rating-read').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+           return $(this).attr('data-score');
     }
   });
 </script>

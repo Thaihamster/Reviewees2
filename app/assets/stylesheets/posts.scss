@@ -1,3 +1,96 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* show */
+.post-show {
+  margin-top: 20px;
+}
+
+.show-img {
+  width: 80%;
+  height: 80%;
+}
+
+.delete-link {
+  float: left;
+}
+
+.avg-review {
+  font-size: 20px;
+}
+
+.show-img2 {
+  width: 32%;
+  height: 32%;
+  float: left;
+}
+
+.post-name {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.heart-size {
+  font-size: 20px;
+}
+
+.list-inline-overview {
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.list-inline-overview li {
+  display: inline;
+}
+
+.avg-rate {
+  color: #F2B33D;
+}
+
+.heart-count {
+  color: #9D2932;
+}
+
+.reviews_category {
+  padding-left: 60px;
+}
+
+.topic-name {
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.post-pictures img {
+  padding-top: 5px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.post-reviewes {
+  padding-top: 10px;
+}
+
+.post-user-picture {
+  width: 70px;
+  height: 70px;
+  border-radius: 60%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  float: left;
+}
+
+.review-detail {
+  float: left;
+}
+
+.review-link {
+  float: right;
+}
+
+.review-change {
+  float: right;
+}
+
+.pagination {
+  margin-left: 30px;
+  font-weight: bold;
+}

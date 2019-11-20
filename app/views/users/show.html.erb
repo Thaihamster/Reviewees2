@@ -10,3 +10,12 @@
   </div>
   <%= render 'users/show' %>
 </div>
+<script>
+  $('.star-rating-read').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

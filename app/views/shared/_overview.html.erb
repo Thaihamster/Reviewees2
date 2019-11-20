@@ -7,14 +7,26 @@
   <div class="row col-lg-12">
     <ul class="list-inline-overview">
     <li class="list-inline-item post-name"><%= @post.name %>
-    <li class="list-inline-item heart-size" id="like">
-      <%= render 'likes/post_like', locals: { post: @post, likes: @likes } %>
+    <li class="list-inline-item sns-link">
+      <%= link_to "https://twitter.com/share?url=#{request.url}&text=タイトル", method: :get do %>
+      <button class="icon">
+        <i class="fab fa-twitter fa-lg"></i>
+      </button>
+      <% end %>
+      <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=タイトル", method: :get do %>
+      <button class="icon">
+        <i class="fab fa-facebook-f fa-lg"></i>
+      </button>
+      <% end %>
+      <button class="icon">
+        <%= render 'likes/post_like', locals: { post: @post, likes: @likes }, class: "heart-size", id: "like" %>
+      </button>
     </li>
   </div>
 
   <div class="row col-lg-12">
     <ul class="list-inline-overview">
-    <li class="star-rating list-inline-item" data-score= <%= @avg_review %> >
+    <li class="star-rating-read list-inline-item" data-score= <%= @avg_review %> >
     <li class="list-inline-item avg-rate"><%= @avg_review %>
     <li class="list-inline-item heart-count">
       <i class="fas fa-heart heart-on fa-lg"></i>
@@ -24,14 +36,25 @@
       <i class="fas fa-comment-dots fa-lg comment-icon"></i>
       <%= @post.reviews.count %>
     </li>
-    <h1 class="row text-left">
-      <span class="badge badge-pill badge-light-category">カテゴリー： <%= @post.category.name %>・<%= @post.child_category.name %></span>
-    </h1>
+    <h4 class="row text-left">
+      <%= link_to @post.category, method: :get do %>
+        <span class="badge badge-pill badge-light-main">
+          メインカテゴリー： <%= @post.category.name %>
+        </span>
+      <% end %>
+    </h4>
+    <h4 class="row text-left">
+      <%= link_to @post.child_category, method: :get do %>
+        <span class="badge badge-pill badge-light-sub">
+          サブカテゴリー： <%= @post.child_category.name %>
+        </span>
+      <% end %>
+    </h4>
     <div class="row line"></div>
   </div>
 
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-10 col-xs-8 col-lg-offset-1 col-xs-offset-2">
       <h4 class="center"><%= @post.content %></h4>
     </div>
   </div>

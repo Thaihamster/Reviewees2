@@ -4,7 +4,9 @@ class PostTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:thaihamster)
-    @post = @user.posts.build(name: "キレイキレイ", content: "泡立ちがよく、洗浄力が高い")
+    @post = @user.posts.build(name: "キレイキレイ", content: "泡立ちがよく、洗浄力が高い",
+                              user_id: "1", picture: "image.jpg", category_id: "4",
+                              child_category_id: "17")
   end
 
   test "should be valid" do

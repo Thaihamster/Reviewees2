@@ -29,7 +29,7 @@
         </div>
         <div class="row prev-image center">
           <% if @post.picture.present? %>
-            <%= image_tag @post.image, id: :img_prev, class: 'prev-image' %>
+            <%= image_tag @post.picture, id: :img_prev, class: 'prev-image' %>
           <% else %>
             <%= image_tag "/image.png", id: :img_prev, class: 'prev-image' %>
           <% end %>

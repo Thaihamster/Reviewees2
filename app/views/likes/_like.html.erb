@@ -4,7 +4,7 @@
       <% if like.post.picture? %>
         <%= image_tag like.post.picture.url, class: "card-img-top"%>
       <% else %>
-        <img class="card-img-top" src="/image3.png">
+        <img class="card-img-top" src="/image.png">
       <% end %>
     </div>
     <div class="card-body">
@@ -16,7 +16,7 @@
       <% reviews = Review.where(post_id: like.post.id) %>
       <% avg_review = reviews.average(:rating) %>
       <div class="rating-user-show">
-        <div class="star-rating" data-score= <%= avg_review %> ></div>
+        <div class="star-rating-read" data-score= <%= avg_review %> ></div>
       </div>
       <div class="user-likes">
         <i class="fas fa-heart heart-on fa-lg"></i>
@@ -30,13 +30,3 @@
     <h5 class="text-muted card-text"><%= like.post.created_at.strftime('%Y/%m/%d') %></h5>
   </div>
 </div>
-
-<script>
-    $('.star-rating').raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function() {
-            return $(this).attr('data-score');
-    }
-  });
-</script>
