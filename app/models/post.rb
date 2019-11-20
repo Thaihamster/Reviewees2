@@ -24,7 +24,7 @@ class Post < ApplicationRecord
   def self.fetch_latest_posts
     Post.preload(:category, :reviews).order(id: "desc")
   end
-  
+
   private
 
     def picture_size

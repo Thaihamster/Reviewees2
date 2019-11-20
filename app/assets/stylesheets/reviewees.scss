@@ -4,9 +4,15 @@
 /* universal */
 
 body {
+  height: 500px;
   background-color: #F7F6EB;
   font-family: YuGothic,'Yu Gothic',sans-serif;
   margin-top:60px;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
 }
 
 section {
@@ -102,6 +108,18 @@ p {
   color: black;
 }
 
+.btn-primary-category {
+  background-color: #C7E6E2;
+  color: #302F2B;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+
+.btn-primary-category:hover {
+  background-color: #285294;
+  color: white;
+}
+
 .btn-signup {
   width: 100px;
   margin-left: 125px;
@@ -172,7 +190,7 @@ p {
 .btn-post-review {
   font-weight: bold;
   margin-right: 40px;
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: #285294;
   color: white;
 }
@@ -228,8 +246,10 @@ p {
   margin-left: 20px;
 }
 
-.badge-light-home {
+.badge-light-category {
   text-align: center;
+  background-color: #4B64A1;
+  color: white;
 }
 
 .badge-danger {
@@ -276,6 +296,7 @@ p {
   color: black;
   text-transform: uppercase;
   letter-spacing: -1px;
+  margin-left: 10px;
   padding-top: 15px;
   font-weight: bold;
   text-decoration: none;
@@ -321,10 +342,27 @@ p {
 }
 
 .home-about {
-  background-color: white;
   margin-bottom:20px;
+}
+
+.home-search {
+  background-color: white;
   border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   filter: drop-shadow(10px 10px 10px rgba(0,0.1,0,0.1));
+}
+
+.search-category {
+  margin-bottom: 5px;
+}
+
+.sub-category {
+  padding-bottom: 10px;
+}
+
+.seach-child-category {
+  margin-bottom: 10px;
 }
 
 /* popular・latest(home) */
@@ -419,6 +457,12 @@ input {
   border: 1px solid #bbb;
   border-radius: 10px;
   margin: 10px 10px;
+}
+
+/* about */
+
+.about-elements {
+  margin-top: 60px;
 }
 
 /* users/show */

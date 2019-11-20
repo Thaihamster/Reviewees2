@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  get 'child_category/index'
-
   get 'child_category/child_categories'
 
   root 'static_pages#home'
-  get    '/about',    to: 'static_pages#about'
-  get    '/privacy',  to: 'static_pages#privacy'
-  get    '/contact',  to: 'static_pages#contact'
+  controller :static_pages do
+    get :about
+    get :privacy
+    get :contact
+    get :search
+  end
+
   get    '/signup',   to: 'users#new'
   get    '/login',    to: 'sessions#new'
   post   '/login',    to: 'sessions#create'
@@ -24,5 +26,9 @@ Rails.application.routes.draw do
     resources :reviews
     resources :likes, only: [:create, :destroy]
   end
+
+  resources :categories, only: [:show]
+
+  resources :child_categories, only: [:show]
 
 end

@@ -10,15 +10,15 @@
       </div>
 
     <!-- カテゴリー(人気) -->
-    <div class="col-lg-5">
+    <div class="col-lg-6">
       <div class="row">
-        <h2 class="topic-name col-lg-offset-1">人気商品</h2>
+        <h2 class="col-lg-5 topic-name">人気商品</h2>
       </div>
       <%= render partial: 'shared/sidebar-popular', collection: Post.fetch_popular_posts.first(3),
       as: :post, cached: true %>
       <div class="row line"></div>
       <div class="row">
-        <h2 class="topic-name col-lg-offset-1">新着商品</h2>
+        <h2 class="col-lg-5 topic-name">新着商品</h2>
       </div>
       <%= render partial: 'shared/sidebar-latest', collection: Post.fetch_latest_posts.first(3),
       as: :post, cached: true %>

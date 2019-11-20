@@ -3,10 +3,14 @@
   <div class="container-fluid jumbotron-container">
     <h1>REVIEWEEES</h1>
     <h4 class="site-description">お気に入りの日用品をシェア&レビューしよう！</h4>
-    <%= link_to "投稿する", signup_path, class: "btn btn-lg btn-primary-home" %>
+    <% if logged_in? %>
+      <%= link_to "投稿する", new_post_path, class: "btn btn-lg btn-primary-home" %>
+    <% else %>
+      <%= link_to "はじめる", login_path, class: "btn btn-lg btn-primary-home" %>
+    <% end %>
   </div>
 </div>
-<%= render 'layouts/about' %>
+<%= render 'layouts/search' %>
 <%= render 'layouts/popular' %>
 <%= render 'layouts/latest' %>
 

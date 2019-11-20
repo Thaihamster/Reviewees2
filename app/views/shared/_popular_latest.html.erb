@@ -1,4 +1,4 @@
-<div class="col-lg-3">
+<div class="col-lg-3 col-xs-6">
   <div class="card">
     <div class="underline-image center">
       <% if post.picture? %>
@@ -10,7 +10,7 @@
     <div class="card-body">
       <h4 class="card-title"><%= link_to post.name, post_path(post) %></h4>
       <h5>
-        <span class="badge badge-pill badge-light-home">
+        <span class="badge badge-pill badge-light-category">
           <%= post.child_category.name %>
         </span>
       </h5>

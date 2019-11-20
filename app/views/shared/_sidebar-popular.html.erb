@@ -1,4 +1,4 @@
-<div class="col-lg-1 sidebar-img">
+<div class="col-lg-1 col-lg-offset-1 sidebar-img">
   <% if post.picture? %>
     <%= image_tag post.picture.url, class: "img-responsive" %>
   <% else %>
@@ -25,7 +25,7 @@
           <%= post.reviews.count %>
         </li>
         <h5>
-          <span class="badge badge-pill badge-light"><%= post.category.name %>・<%= post.child_category.name %></span>
+          <span class="badge badge-pill badge-light-category"><%= post.category.name %>・<%= post.child_category.name %></span>
         </h5>
       </h5>
     </div>

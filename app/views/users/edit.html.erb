@@ -18,6 +18,13 @@
         <div class="w-100">
           <label class="btn btn-file-upload" for="file"><i class="fas fa-plus fa-lg"></i><i class="far fa-images fa-2x"></i>
         </div>
+        <div class="row prev-image center">
+          <% if @user.image.present? %>
+            <%= image_tag @user.image, id: :img_prev, class: 'prev-image' %>
+          <% else %>
+            <%= image_tag "/image.png", id: :img_prev, class: 'prev-image' %>
+          <% end %>
+        </div>
 
         <%= f.label :パスワード %>
         <%= f.password_field :password, class: 'form-control', :placeholder => "6文字以上" %>
@@ -30,11 +37,25 @@
     </div>
   </div>
 
-  <script type="text/javascript">
+<script type="text/javascript">
   $('#user_image').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
       alert('許容ファイルサイズは5MBまでです。 他のファイルを選択してください');
     }
+  });
+  $(function() {
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+  $('#img_prev').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+      }
+    }
+  $("#file").change(function(){
+      readURL(this);
+    });
   });
 </script>

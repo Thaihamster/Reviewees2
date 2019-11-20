@@ -1,0 +1,36 @@
+<section>
+  <div class="container col-lg-10 col-lg-offset-1 home-search">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="topic-title">
+          <h1 style="font-weight: bold;">検索</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="topic-title">
+          <h4 style="font-weight: bold;">メインカテゴリーから検索</h4>
+          <% Category.all.each do |category| %>
+            <%= link_to category.name, category_path(category),
+            class: "btn btn-primary-category search-category"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 sub-category">
+        <div class="topic-title">
+          <h4 style="font-weight: bold;">サブカテゴリ―から検索</h4>
+          <% ChildCategory.all.each do |child_category| %>
+            <%= link_to child_category.name, child_category_path(child_category),
+            class: "btn btn-primary-category seach-child-category" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

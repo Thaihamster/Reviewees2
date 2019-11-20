@@ -1,0 +1,64 @@
+<% provide(:title, @child_category.name ) %>
+<section>
+<div class="container col-lg-10 col-lg-offset-1">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="topic-title">
+        <h1 style="font-weight: bold;">検索結果</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 center">
+      <% if @child_category.posts.any? %>
+        <% @child_category.posts.each do |post| %>
+        <div class="col-lg-3 col-xs-6">
+          <div class="card">
+            <div class="underline-image center">
+              <% if post.picture? %>
+                <%= image_tag post.picture.url, class: "card-img-top"%>
+              <% else %>
+                <img class="card-img-top" src="/image.png">
+              <% end %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"><%= link_to post.name, post_path(post) %></h4>
+              <h5>
+                <span class="badge badge-pill badge-light-category">
+                  <%= post.category.name %>
+                </span>
+              </h5>
+            </div>
+            <div class="row">
+              <!-- いつの日かリファクタリングする -->
+              <% reviews = Review.where(post_id: post.id) %>
+              <% avg_review = reviews.average(:rating) %>
+              <ul class="list-inline">
+              <li class="star-rating list-inline-item" data-score= <%= avg_review %> >
+              <li class="list-inline-item avg-rate"><%= avg_review %>
+              <li class="list-inline-item">
+                <i class="fas fa-comment-dots comment-icon"></i>
+                <%= post.reviews.count %>
+              </li>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <h4 class="col-lg-4" style="font-weight: bold; float: left;">検索条件に該当する投稿がありません</h4>
+      <% end %>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

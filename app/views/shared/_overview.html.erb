@@ -25,7 +25,7 @@
       <%= @post.reviews.count %>
     </li>
     <h1 class="row text-left">
-      <span class="badge badge-pill badge-light">カテゴリー： <%= @post.category.name %>・<%= @post.child_category.name %></span>
+      <span class="badge badge-pill badge-light-category">カテゴリー： <%= @post.category.name %>・<%= @post.child_category.name %></span>
     </h1>
     <div class="row line"></div>
   </div>
@@ -39,7 +39,7 @@
 <!-- 削除・編集ボタン -->
 <div class="row">
   <h4 class="center">
-    <% if current_user.id == @post.user_id || current_user.admin? %>
+    <% if logged_in? && current_user.admin? %>
       <%= link_to "編集する", edit_post_path, class: "btn btn-edit" %>
       <%= link_to "削除する", post_path, method: :delete,
                                     data: { confirm: "この投稿を削除します。本当によろしいですか？" },

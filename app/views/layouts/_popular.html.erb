@@ -9,7 +9,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12 center">
-        <%= render partial: 'shared/home_popular', collection: Post.fetch_popular_posts.first(4),
+        <%= render partial: 'shared/popular_latest', collection: Post.fetch_popular_posts.first(4),
         as: :post, cached: true %>
       </div>
     </div>

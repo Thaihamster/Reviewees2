@@ -14,7 +14,7 @@
       <h5 class="text-muted">
         <%= review.created_at.strftime('%Y/%m/%d') %>
         <div class="col-lg-offset-3">
-          <% if current_user.id == @post.user_id || current_user.admin? %>
+          <% if logged_in? && current_user.admin? %>
             <%= link_to "編集", edit_post_review_path(@post, review), class: "btn btn-review-edit btn-xs" %>
             <%= link_to "削除", post_review_path(@post, review), method: :delete,
                                                             data: { confirm: "このレビューを削除します。本当によろしいですか？" },
