@@ -8,12 +8,13 @@
     <ul class="list-inline-overview">
     <li class="list-inline-item post-name"><%= @post.name %>
     <li class="list-inline-item sns-link">
-      <%= link_to "https://twitter.com/share?url=#{request.url}&text=タイトル", method: :get do %>
+      <%= link_to "https://twitter.com/share?url=https://reviewees2.herokuapp.com/posts/#{@post.id}&text=#{@post.name}",
+      rel: 'nofollow', target: '_blank' do %>
       <button class="icon">
         <i class="fab fa-twitter fa-lg"></i>
       </button>
       <% end %>
-      <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=タイトル", method: :get do %>
+      <%= link_to "https://www.facebook.com/share.php?u=https://reviewees2.herokuapp.com/posts/#{@post.id}", target: '_blank' do %>
       <button class="icon">
         <i class="fab fa-facebook-f fa-lg"></i>
       </button>
