@@ -18,7 +18,7 @@
     <div class="row">
       <!-- いつの日かリファクタリングする -->
       <% reviews = Review.where(post_id: post.id) %>
-      <% avg_review = reviews.average(:rating) %>
+      <% avg_review = reviews.average(:rating).round(2) %>
       <ul class="list-inline">
       <li class="star-rating-read list-inline-item" data-score= <%= avg_review %> >
       <li class="list-inline-item avg-rate"><%= avg_review %>
