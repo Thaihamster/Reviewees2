@@ -14,12 +14,12 @@
     </div>
     <div class="favorite-items-review">
       <h5>
+        <!-- いつの日かリファクタリングする -->
         <% reviews = Review.where(post_id: post.id) %>
         <ul class="list-inline">
         <% if reviews.present? %>
-          <% avg_review = reviews.average(:rating).round(1) %>
+          <% avg_review = reviews.average(:rating) %>
           <li class="star-rating-read list-inline-item" data-score= <%= avg_review %> >
-          <li class="list-inline-item avg-rate"><%= avg_review %>
         <% else %>
           <li class="star-rating-read list-inline-item">
         <% end %>
