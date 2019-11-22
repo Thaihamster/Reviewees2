@@ -131,7 +131,8 @@ input[name="tab_item"] {
 }
 
 .user-review-detail {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-left: 25px;
 }
 
 .text-left {
@@ -143,4 +144,13 @@ input[name="tab_item"] {
   a:hover {
     color: black;
   }
+}
+
+.user-review-picture {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  float: left;
 }
