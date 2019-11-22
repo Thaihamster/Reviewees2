@@ -9,11 +9,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @reviews = @post.reviews.paginate(page: params[:page], per_page: 3)
-    if @reviews.blank?
-      @avg_review = 0
-    else
-      @avg_review = @reviews.average(:rating)
-    end
   end
 
   def create

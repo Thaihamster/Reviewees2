@@ -27,8 +27,15 @@
 
   <div class="row col-lg-12">
     <ul class="list-inline-overview">
-    <li class="star-rating-read list-inline-item" data-score= <%= @avg_review %> >
-    <li class="list-inline-item avg-rate"><%= @avg_review %>
+      <% reviews = Review.where(post_id: @post) %>
+      <ul class="list-inline">
+      <% if reviews.present? %>
+        <% avg_review = reviews.average(:rating).round(1) %>
+        <li class="star-rating-read list-inline-item" data-score= <%= avg_review %> >
+        <li class="list-inline-item avg-rate"><%= avg_review %>
+      <% else %>
+        <li class="star-rating-read list-inline-item">
+      <% end %>
     <li class="list-inline-item heart-count">
       <i class="fas fa-heart heart-on fa-lg"></i>
       <%= @post.likes.count %>
