@@ -11,13 +11,13 @@
       <div class="row">
         <h2 class="col-lg-5 topic-name">人気商品</h2>
       </div>
-      <%= render partial: 'shared/sidebar-popular', collection: Post.fetch_popular_posts.first(3),
+      <%= render partial: 'shared/sidebar-popular', collection: Post.fetch_popular_posts.first(4),
       as: :post %>
       <div class="row line"></div>
       <div class="row">
         <h2 class="col-lg-5 topic-name">新着商品</h2>
       </div>
-      <%= render partial: 'shared/sidebar-latest', collection: Post.fetch_latest_posts.first(3),
+      <%= render partial: 'shared/sidebar-latest', collection: Post.fetch_latest_posts.first(4),
       as: :post %>
     </div>
   </div>
