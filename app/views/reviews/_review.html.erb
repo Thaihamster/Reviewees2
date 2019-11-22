@@ -1,9 +1,7 @@
 <div class="w-100">
   <div class="col-lg-1 col-lg-offset-1 post-reviewes">
     <% if review.user.image? %>
-    <div class="post-user-picture">
-      <%= link_to image_tag(review.user.image), user_path(review.user) %>
-    </div>
+      <%= link_to image_tag(review.user.image), user_path(review.user), class: "post-user-picture" %>
     <% else %>
       <img class="post-user-picture" src="/no_image.jpeg">
     <% end %>
