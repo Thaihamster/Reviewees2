@@ -11,16 +11,16 @@
       <%= link_to "https://twitter.com/share?url=https://reviewees2.herokuapp.com/posts/#{@post.id}&text=#{@post.name}",
       rel: 'nofollow', target: '_blank' do %>
       <button class="icon">
-        <i class="fab fa-twitter fa-lg"></i>
+        <i class="fab fa-twitter fa-lg center"></i>
       </button>
       <% end %>
       <%= link_to "https://www.facebook.com/share.php?u=https://reviewees2.herokuapp.com/posts/#{@post.id}", target: '_blank' do %>
       <button class="icon">
-        <i class="fab fa-facebook-f fa-lg"></i>
+        <i class="fab fa-facebook-f fa-lg center"></i>
       </button>
       <% end %>
       <button class="icon">
-        <%= render 'likes/post_like', locals: { post: @post, likes: @likes }, class: "heart-size", id: "like" %>
+        <%= render 'likes/post_like', locals: { post: @post, likes: @likes }, class: "heart-size center", id: "like" %>
       </button>
     </li>
   </div>

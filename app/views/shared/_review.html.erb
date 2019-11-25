@@ -1,19 +1,18 @@
-
-  <div class="row">
-    <div class="col-lg-1">
-      <% if review.user.image? %>
-        <%= image_tag review.user.image.url, class: "user-review-picture" %>
-      <% else %>
-        <img class="user-review-picture" src="/no_image.jpeg">
-      <% end %>
-    </div>
-      <div class="col-lg-4">
-        <div class="user-review-detail">
-          <h4 class="text-left" style="font-weight: bold;">
-            <%= link_to review.title, post_path(review.post) %>
-          </h4>
-          <h5 class="text-left" style="font-weight: bold;"><%= review.post.name %></h5>
-          <div class="star-rating-read text-left" data-score= <%= review.rating %> ></div>
-        </div>
-      </div>
+<div class="w-100">
+  <div class="col-lg-1 col-lg-offset-1 post-reviewes">
+    <% if review.user.image? %>
+      <%= image_tag review.user.image.url, class: "user-review-picture" %>
+    <% else %>
+      <img class="user-review-picture" src="/no_image.jpeg">
+    <% end %>
   </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-1 review-detail">
+        <h4 class="text-left" style="font-weight: bold;">
+          <%= link_to review.title, post_path(review.post) %>
+        </h4>
+        <h5 class="text-left" style="font-weight: bold;"><%= review.post.name %></h5>
+        <div class="star-rating-read text-left" data-score= <%= review.rating %> ></div>
+      </div>
+    </div>
+</div>

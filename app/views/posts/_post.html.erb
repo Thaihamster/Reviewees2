@@ -15,7 +15,7 @@
         </span>
       </h5>
     </div>
-    <div class="row center">
+    <div class="row">
       <!-- いつの日かリファクタリングする -->
       <% reviews = Review.where(post_id: post.id) %>
       <ul class="list-inline">
@@ -26,7 +26,7 @@
         <li class="star-rating-read list-inline-item">
       <% end %>
       <li class="list-inline-item">
-        <i class="fas fa-heart heart-on fa-lg"></i>
+        <i class="fas fa-heart heart-on"></i>
         <%= post.likes.count %>
       </li>
       <li class="list-inline-item">
