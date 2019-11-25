@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="col-lg-6">
   <div class="card">
     <div class="underline-image">
       <% if post.picture? %>
@@ -9,23 +9,30 @@
     </div>
     <div class="card-body">
       <h4 class="card-title"><%= link_to post.name, post_path(post) %></h4>
-      <h5 class="card-text">カテゴリー</h5>
+      <h5>
+        <span class="badge badge-pill badge-light-category">
+          <%= post.child_category.name %>
+        </span>
+      </h5>
     </div>
-    <div class="row">
+    <div class="row center">
       <!-- いつの日かリファクタリングする -->
       <% reviews = Review.where(post_id: post.id) %>
-      <% avg_review = reviews.average(:rating) %>
-      <div class="rating-user-show">
-        <div class="star-rating-read" data-score= <%= avg_review %> ></div>
-      </div>
-      <div class="user-likes">
+      <ul class="list-inline">
+      <% if reviews.present? %>
+        <% avg_review = reviews.average(:rating).round(1) %>
+        <li class="star-rating-read list-inline-item" data-score= <%= avg_review %> >
+      <% else %>
+        <li class="star-rating-read list-inline-item">
+      <% end %>
+      <li class="list-inline-item">
         <i class="fas fa-heart heart-on fa-lg"></i>
         <%= post.likes.count %>
-      </div>
-      <div class="user-reviews-count">
-        <i class="fas fa-comment-dots fa-lg"></i>
+      </li>
+      <li class="list-inline-item">
+        <i class="fas fa-comment-dots comment-icon"></i>
         <%= post.reviews.count %>
-      </div>
+      </li>
     </div>
     <h5 class="text-muted card-text"><%= post.created_at.strftime('%Y/%m/%d') %></h5>
   </div>
